@@ -4,7 +4,7 @@ let HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   mode: 'development',
   entry: {
-    vender: ['react','react-dom'],
+    vender: ['react','react-router-dom','react-dom'],
     main: path.resolve(__dirname,'src/index.js'),
   },
   output:{
@@ -17,17 +17,27 @@ module.exports = {
     modules: false,
     children: false,
   },
+  resolve:{
+    extensions: [".js", ".css"],
+  },
   module:{
     rules:[
       {test: /\.js?$/, use: 'babel-loader',},
+      {test: /\.css?$/, use: ['style-loader','css-loader'],},
     ],
   },
   devServer:{
-    contentBase: path.join(__dirname,'build'),
     compress: true,
     port: 9000,
-    overlay: true,
+    overlay: {
+      warnings: true,
+      errors: true
+    },
     open: true,
+    historyApiFallback: true,
+    watchOptions: {
+      poll: true
+    },
   },
   plugins:[new HtmlWebpackPlugin({
     template: 'index.html',
