@@ -1,0 +1,29 @@
+{
+  "name": "react-demo",
+  "version": "1.0.0",
+  "description": "收集",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zjingwen/react-demo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Zjingwen/react-demo/issues"
+  },
+  "homepage": "https://github.com/Zjingwen/react-demo#readme",
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-preset-react": "^6.24.1",
+    "react": "16.7.0-alpha.2",
+    "react-dom": "^16.4.2",
+    "webpack": "^4.16.5",
+    "webpack-cli": "^3.1.0",
+    "babel-preset-stage-3": "^6.24.1"
+  }
+}
