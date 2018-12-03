@@ -1,10 +1,10 @@
 {
   "name": "react-demo",
   "version": "1.0.0",
-  "description": "收集",
-  "main": "index.js",
+  "description": "Readt-demo",
+  "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "watch": "webpack -w"
   },
   "repository": {
     "type": "git",
