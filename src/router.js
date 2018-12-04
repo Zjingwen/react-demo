@@ -1,13 +1,13 @@
 import About from './pages/about/';
 import Topics from './pages/Topics/';
-import Home from './pages/Home/';
+import Hooks from './pages/Hooks/';
 
-export default  [
-  { 
-    name: 'home',
+export default [
+  {
+    name: 'Hooks',
     path: '/',
     exact: true,
-    component: Home
+    component: Hooks
   },
   { 
     name: 'topics',
@@ -21,4 +21,4 @@ export default  [
     exact: true,
     component: About
   },
-]
+];
