@@ -1,6 +1,6 @@
 import React,{Component,useState,useEffect} from 'react';
 
-function FriendStatus(){
+function FriendStatus(props){
   const [isOnline, setIsOnline] = useState(null);
 
   function handleStatusChange(status){
@@ -19,12 +19,14 @@ function FriendStatus(){
   };
 
   useEffect(()=>{
-    subScript(handleStatusChange);
+    subScript(handleStatusChange,);
     
     return ()=> {
       unSubScript(handleStatusChange);    
     }
   },[]);
+  
+  console.log(props);
 
   if (isOnline === null) {
     return 'Loading...';
@@ -50,7 +52,7 @@ class Hooks extends Component{
     return(
       <React.Fragment>
         <h1>Hooks</h1>
-        {show && <FriendStatus/>}
+        {show && <FriendStatus text='1111'/>}
         <button onClick={()=> this.setState({show: !show})}>show</button>
       </React.Fragment>
     );
