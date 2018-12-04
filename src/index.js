@@ -25,7 +25,8 @@ ReactDOM.render(
   <BrowserRouter>
     <Switch>
       {routerConfig.map((v,i)=>{
-        return <Route path={v.path} exact={v.exact} component={HOCnav(v.component)} key={i} />
+        v.component = HOCnav(v.component);
+        return <Route {...v} key={i} />
       })}
     </Switch>
   </BrowserRouter>,
