@@ -1,21 +1,21 @@
 import React,{Component,useState,useEffect} from 'react';
+import Fieldset from '../../component/Fieldset';
 
-function FriendStatus(props){
+function UseEffectComponent(props){
   const [isOnline, setIsOnline] = useState(null);
 
   function handleStatusChange(status){
-    // console.log(status);
     setIsOnline(status.isOnline);
   };
 
   function subScript(f){
     f({isOnline: 1});
-    console.log('subScript');
+    props.callback('subScript');
   };
 
   function unSubScript(f){
     f({isOnline: 0});
-    console.log('unSubScript');
+    props.callback('unSubScript');
   };
 
   useEffect(()=>{
@@ -24,36 +24,56 @@ function FriendStatus(props){
     return ()=> {
       unSubScript(handleStatusChange);    
     }
-  },[]);
+  });
   
-  console.log(props);
-
   if (isOnline === null) {
-    return 'Loading...';
-  }
-  return isOnline ? 'Online' : 'Offline';
-}
+    return <p>Loading...</p>;
+  };
+
+  return <p>{isOnline ? 'Online' : 'Offline'}</p>;
+};
+
+function UseStateComponent(){
+  const [count, setCount] = useState(0);
+
+  return(
+    <React.Fragment>
+      <p>Count: {count}</p>
+      <button onClick={()=>{setCount(count+1)}}>++</button>
+      <button onClick={()=>{setCount(count-1)}}>--</button>
+    </React.Fragment>
+  )
+};
 
 class Hooks extends Component{
   constructor(props){
     super(props);
-    console.log('constructor');
     this.state = {
       show: true,
+      effectState: '',
     }
   };
 
-  componentWillUnmount(){
-    console.log('componentWillUnmount')
+  handleEffect(e){
+    this.setState({
+      effectState: e,
+    })
   }
 
   render(){
-    const {show} = this.state;
+    const {show,effectState} = this.state;
     return(
       <React.Fragment>
         <h1>Hooks</h1>
-        {show && <FriendStatus text='1111'/>}
-        <button onClick={()=> this.setState({show: !show})}>show</button>
+        <Fieldset title='useState'>
+          <UseStateComponent />
+        </Fieldset>
+
+        <Fieldset title='useEffect'>
+          <p>effectState: {effectState}</p>
+          {show && <UseEffectComponent callback={(e)=> this.handleEffect(e)}/>}
+          <button onClick={()=> this.setState({show: !show})}>show</button>
+        </Fieldset>
       </React.Fragment>
     );
   }
