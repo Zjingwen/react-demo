@@ -19,7 +19,7 @@ function UseEffectComponent(props){
   };
 
   useEffect(()=>{
-    subScript(handleStatusChange,);
+    subScript(handleStatusChange);
     
     return ()=> {
       unSubScript(handleStatusChange);    
@@ -44,6 +44,14 @@ function UseStateComponent(){
     </React.Fragment>
   )
 };
+
+function TodosComponent(){
+  return(
+    <React.Fragment>
+      todos
+    </React.Fragment>
+  )
+}
 
 class Hooks extends Component{
   constructor(props){
@@ -73,6 +81,10 @@ class Hooks extends Component{
           <p>effectState: {effectState}</p>
           {show && <UseEffectComponent callback={(e)=> this.handleEffect(e)}/>}
           <button onClick={()=> this.setState({show: !show})}>show</button>
+        </Fieldset>
+
+        <Fieldset title='todos'>
+          <TodosComponent />
         </Fieldset>
       </React.Fragment>
     );
