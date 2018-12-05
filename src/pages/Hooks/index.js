@@ -33,8 +33,8 @@ class Hooks extends Component{
 
         <Fieldset title='useEffect'>
           <p>effectState: {effectState}</p>
-          {show && <UseEffectComponent callback={(e)=> this.handleEffect(e)}/>}
           <button onClick={()=> this.setState({show: !show})}>show</button>
+          {show && <UseEffectComponent callback={(e)=> this.handleEffect(e)}/>}
         </Fieldset>
 
         <Fieldset title='todos'>
