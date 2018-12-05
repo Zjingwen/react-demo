@@ -19,6 +19,9 @@ module.exports = {
   },
   resolve:{
     extensions: [".js", ".css"],
+    alias:{
+      '@Component': path.resolve(__dirname,'src/component/'),
+    }
   },
   module:{
     rules:[

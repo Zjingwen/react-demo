@@ -1,57 +1,10 @@
-import React,{Component,useState,useEffect} from 'react';
-import Fieldset from '../../component/Fieldset';
+import React,{Component} from 'react';
+import Fieldset from '@Component/Fieldset';
 
-function UseEffectComponent(props){
-  const [isOnline, setIsOnline] = useState(null);
+import UseEffectComponent from './UseEffectComponent';
+import UseStateComponent from './UseStateComponent';
+import TodosComponent from './TodosComponent';
 
-  function handleStatusChange(status){
-    setIsOnline(status.isOnline);
-  };
-
-  function subScript(f){
-    f({isOnline: 1});
-    props.callback('subScript');
-  };
-
-  function unSubScript(f){
-    f({isOnline: 0});
-    props.callback('unSubScript');
-  };
-
-  useEffect(()=>{
-    subScript(handleStatusChange);
-    
-    return ()=> {
-      unSubScript(handleStatusChange);    
-    }
-  });
-  
-  if (isOnline === null) {
-    return <p>Loading...</p>;
-  };
-
-  return <p>{isOnline ? 'Online' : 'Offline'}</p>;
-};
-
-function UseStateComponent(){
-  const [count, setCount] = useState(0);
-
-  return(
-    <React.Fragment>
-      <p>Count: {count}</p>
-      <button onClick={()=>{setCount(count+1)}}>++</button>
-      <button onClick={()=>{setCount(count-1)}}>--</button>
-    </React.Fragment>
-  )
-};
-
-function TodosComponent(){
-  return(
-    <React.Fragment>
-      todos
-    </React.Fragment>
-  )
-}
 
 class Hooks extends Component{
   constructor(props){
@@ -66,10 +19,11 @@ class Hooks extends Component{
     this.setState({
       effectState: e,
     })
-  }
+  };
 
   render(){
     const {show,effectState} = this.state;
+
     return(
       <React.Fragment>
         <h1>Hooks</h1>
