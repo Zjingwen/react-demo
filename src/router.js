@@ -6,7 +6,7 @@ import Index from './pages/index/';
 export default [
   {
     name: 'Index',
-    path: '/index',
+    path: '/',
     exact: true,
     component: Index
   },
