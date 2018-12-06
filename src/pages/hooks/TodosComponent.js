@@ -52,7 +52,6 @@ function TodosComponent(){
           )
         }
       })()}
-      
     </p>
   );
 
