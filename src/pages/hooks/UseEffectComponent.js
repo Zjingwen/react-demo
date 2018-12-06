@@ -1,35 +1,32 @@
 import React,{useState,useEffect} from 'react';
+import Fieldset from '@Component/Fieldset';
 
-function UseEffectComponent(props){
-  const [isOnline, setIsOnline] = useState(null);
-
-  function handleStatusChange(status){
-    setIsOnline(status.isOnline);
-  };
-
-  function subScript(f){
-    f({isOnline: 1});
-    props.callback('subScript');
-  };
-
-  function unSubScript(f){
-    f({isOnline: 0});
-    props.callback('unSubScript');
-  };
+function A(){
+  const [count,setCount] = useState(0)
 
   useEffect(()=>{
-    subScript(handleStatusChange);
-    
-    return ()=> {
-      unSubScript(handleStatusChange);    
-    }
+    document.getElementById('useEffect-A-count').innerText = `count: ${count}`;
   });
-  
-  if (isOnline === null) {
-    return <p>Loading...</p>;
+
+  function handleClick(){
+    setCount(count+1);
   };
 
-  return <p>{isOnline ? 'Online' : 'Offline'}</p>;
+  return (
+    <Fieldset title='useEffect-简单状态'>
+      <p id='useEffect-A-count'></p>
+      <input type='button' value='更新' onClick={handleClick}/>
+    </Fieldset>
+  )
+}
+
+
+function UseEffectComponent(){
+  return(
+    <React.Fragment>
+      <A />
+    </React.Fragment>
+  )
 };
 
 export default UseEffectComponent;

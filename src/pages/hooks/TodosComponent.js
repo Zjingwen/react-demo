@@ -1,4 +1,5 @@
 import React,{useState} from 'react';
+import Fieldset from '@Component/Fieldset';
 
 function InputComponent(props){
   const [val,setVal] = useState(props.val || "");
@@ -90,10 +91,10 @@ function TodosComponent(){
   };
 
   return(
-    <React.Fragment>
+    <Fieldset title='todos'>
       <InputComponent name='添加' placeholder='输入' callback={handleSubmit}/>
       {p}
-    </React.Fragment>
+    </Fieldset>
   )
 };
 
