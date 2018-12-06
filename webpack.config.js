@@ -1,4 +1,5 @@
 let path = require('path');
+let apiMocker = require('mocker-api');
 let HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
@@ -40,6 +41,13 @@ module.exports = {
     historyApiFallback: true,
     watchOptions: {
       poll: true
+    },
+    before(app){
+      apiMocker(app,path.resolve(__dirname,'src/mock/index.js'),{
+        proxy: {
+          '/api/*': 'http://localhost:9000/api/'
+        }
+      })
     },
   },
   plugins:[new HtmlWebpackPlugin({
