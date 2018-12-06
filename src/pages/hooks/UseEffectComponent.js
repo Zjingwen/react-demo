@@ -14,16 +14,29 @@ function A(){
 
   return (
     <Fieldset title='useEffect-在componentDidMount、componentDidUpdate时触发'>
-      <p id='useEffect-A-count'></p>
+      <p id='useEffect-A-count'>Count: </p>
       <input type='button' value='更新' onClick={handleClick}/>
     </Fieldset>
   )
 };
 
 function B(){
+  const [show,setShow] = useState(true);
+  function Child(){
+    useEffect(()=>{
+      console.log('componentDidMount');
+      return ()=>{
+        console.log('componentWillUnmount');
+      }
+    })
+    return <p>B-Child</p>
+  };
+
   return (
     <Fieldset title='useEffect-在componentWillUnmunt时触发'>
-      TODO
+      <p>请查看log</p>
+      <input type='button' value='show' onClick={()=>setShow(!show)}/>
+      {show && <Child/>}
     </Fieldset>
   )
 };
