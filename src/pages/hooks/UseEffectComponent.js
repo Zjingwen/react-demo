@@ -13,18 +13,26 @@ function A(){
   };
 
   return (
-    <Fieldset title='useEffect-简单状态'>
+    <Fieldset title='useEffect-在componentDidMount、componentDidUpdate时触发'>
       <p id='useEffect-A-count'></p>
       <input type='button' value='更新' onClick={handleClick}/>
     </Fieldset>
   )
-}
+};
 
+function B(){
+  return (
+    <Fieldset title='useEffect-在componentWillUnmunt时触发'>
+      TODO
+    </Fieldset>
+  )
+};
 
 function UseEffectComponent(){
   return(
     <React.Fragment>
       <A />
+      <B />
     </React.Fragment>
   )
 };
