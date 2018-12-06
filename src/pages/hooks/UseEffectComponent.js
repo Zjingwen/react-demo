@@ -29,7 +29,7 @@ function B(){
       console.log('componentDidMount');
       return ()=>{
         console.log('componentWillUnmount');
-      }
+      };
     });
 
     return (
