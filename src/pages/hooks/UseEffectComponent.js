@@ -1,5 +1,6 @@
 import React,{useState,useEffect} from 'react';
 import Fieldset from '@Component/Fieldset';
+import axios from 'axios';
 
 function A(){
   const [count,setCount] = useState(0)
@@ -22,16 +23,22 @@ function A(){
 
 function B(){
   const [show,setShow] = useState(true);
+  
   function Child(){
     useEffect(()=>{
       console.log('componentDidMount');
       return ()=>{
         console.log('componentWillUnmount');
       }
-    })
-    return <p>B-Child</p>
-  };
+    });
 
+    return (
+      <React.Fragment>
+        <p>B-Child</p>
+      </React.Fragment>
+    )
+  };
+  
   return (
     <Fieldset title='useEffect-在componentWillUnmunt时触发'>
       <p>请查看log</p>
@@ -41,11 +48,25 @@ function B(){
   )
 };
 
+function C(){
+  const json = axios.get('/api/user');
+  json.then(res=>{
+    const data = res.data.result;
+    console.log(data);
+  });
+  return (
+    <Fieldset title='useEffect-ajax请求数据'>
+      TODO
+    </Fieldset>
+  )
+};
+
 function UseEffectComponent(){
   return(
     <React.Fragment>
       <A />
       <B />
+      <C />
     </React.Fragment>
   )
 };
