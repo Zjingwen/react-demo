@@ -49,14 +49,44 @@ function B(){
 };
 
 function C(){
-  const json = axios.get('/api/user');
-  json.then(res=>{
-    const data = res.data.result;
-    console.log(data);
-  });
+  const [data,setData] = useState(null);
+
+  useEffect(()=>{
+    const json = axios.get('/api/user');
+    json.then(res=>{
+      const data = res.data.result;
+      setData(data);
+    });
+  },[]);
+
   return (
     <Fieldset title='useEffect-ajax请求数据'>
-      TODO
+      {(()=>{
+        return data && Object.keys(data).map((v,i)=><p key={i}>{v}：{data[v]}</p>)
+      })()}
+    </Fieldset>
+  )
+};
+
+function D(){
+  const [count,setCount] = useState(0);
+  const [double,setDouble] = useState(count*2);
+  const [three,setThree] = useState(count*3);
+  
+  useEffect(()=>{
+    setDouble(count*2);
+  },[count*2])
+
+  useEffect(()=>{
+    setThree(count*3);
+  },[])// 为空数组，表示不依赖props或者state，将不会更新
+
+  return (
+    <Fieldset title='userEffect-利用第二个参数跳过效果优化'>
+      <p>+1: {count}</p>
+      <p>*2: {double}</p>
+      <p>*3: {three}</p>
+      <input type='button' value='click' onClick={()=>setCount(count+1)}/>
     </Fieldset>
   )
 };
@@ -67,6 +97,7 @@ function UseEffectComponent(){
       <A />
       <B />
       <C />
+      <D />
     </React.Fragment>
   )
 };

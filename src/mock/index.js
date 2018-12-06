@@ -4,7 +4,7 @@ const proxy = {
   'GET /api/user': {
     result:{
       id: 1,
-      username: 'kenny111',
+      username: 'aaaaaaaaa',
       sex: 6
     },
     status:{
