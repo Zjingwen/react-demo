@@ -51,7 +51,7 @@ function B(){
 function C(){
   const [data,setData] = useState(null);
   const getData = function(){
-    const json = axios.get('/api/user');
+    const json = axios.get('/api/user/info');
     json.then(res=>{
       const data = res.data.result;
       setData(data);
