@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from 'react';
+import React,{useState,useEffect,useLayoutEffect} from 'react';
 import Fieldset from '@Component/Fieldset';
 import axios from 'axios';
 
@@ -86,18 +86,38 @@ function D(){
   },[count*2])
 
   useEffect(()=>{
-    setThree(count*3);
+    setThree(count);
   },[])// 为空数组，表示不依赖props或者state，将不会更新
 
   return (
     <Fieldset title='userEffect-利用第二个参数跳过效果优化'>
       <p>+1: {count}</p>
       <p>*2: {double}</p>
-      <p>*3: {three}</p>
+      <p>not: {three}</p>
       <input type='button' value='click' onClick={()=>setCount(count+1)}/>
     </Fieldset>
   )
 };
+
+function E(){
+  const [name,setName] = useState(null);
+  useLayoutEffect(()=>{
+    setTimeout(()=>{
+      setName('useLayoutEffect');
+    },3000);
+  },[]);
+  useEffect(()=>{
+    setTimeout(()=>{
+      setName('useEffect');
+    },3000);
+  },[]);
+
+  return(
+    <Fieldset title='useLayoutEffecth和useEffect的区别'>
+      <span id='e-useEffect'>{name}</span>
+    </Fieldset>
+  )
+}
 
 function UseEffectComponent(){
   return(
@@ -106,6 +126,7 @@ function UseEffectComponent(){
       <B />
       <C />
       <D />
+      <E />
     </React.Fragment>
   )
 };
