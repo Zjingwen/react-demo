@@ -2,6 +2,7 @@ import React from 'react';
 
 import UseEffectComponent from './UseEffectComponent';
 import UseStateComponent from './UseStateComponent';
+import UseContentComponent from './useContextComponent';
 import TodosComponent from './TodosComponent';
 
 
@@ -12,6 +13,7 @@ function Hooks(){
       <UseStateComponent />
       <UseEffectComponent />
       <TodosComponent />
+      <UseContentComponent />
     </React.Fragment>
   );
 };

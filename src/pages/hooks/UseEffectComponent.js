@@ -1,4 +1,10 @@
-import React,{useState,useEffect,useLayoutEffect} from 'react';
+import React,{
+  useState,
+  useEffect,
+  useLayoutEffect,
+  useContext,
+  createContext,
+} from 'react';
 import Fieldset from '@Component/Fieldset';
 import axios from 'axios';
 
@@ -117,7 +123,9 @@ function E(){
       <span id='e-useEffect'>{name}</span>
     </Fieldset>
   )
-}
+};
+
+
 
 function UseEffectComponent(){
   return(
