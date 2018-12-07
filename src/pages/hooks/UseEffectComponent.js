@@ -6,7 +6,7 @@ function A(){
   const [count,setCount] = useState(0)
 
   useEffect(()=>{
-    document.getElementById('useEffect-A-count').innerText = `count: ${count}`;
+    document.getElementById('useEffect-A-count').innerText = `Count: ${count}`;
   });
 
   function handleClick(){
@@ -50,17 +50,25 @@ function B(){
 
 function C(){
   const [data,setData] = useState(null);
-
-  useEffect(()=>{
+  const getData = function(){
     const json = axios.get('/api/user');
     json.then(res=>{
       const data = res.data.result;
       setData(data);
     });
+  };
+
+  useEffect(()=>{
+    getData();
   },[]);
+
+  function handleClick(){
+    getData();
+  };
 
   return (
     <Fieldset title='useEffect-ajax请求数据'>
+      <input type='button' value='更新数据' onClick={handleClick}/>
       {(()=>{
         return data && Object.keys(data).map((v,i)=><p key={i}>{v}：{data[v]}</p>)
       })()}
