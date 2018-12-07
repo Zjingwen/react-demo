@@ -70,10 +70,13 @@ function TodosComponent(){
       val: e,
       show: false,
     };
+
+    setList(list);
   };
 
   function handleModify(e,i){
     list[i].show = !list[i].show;
+    setList(list);
     e.preventDefault();
   }
 
