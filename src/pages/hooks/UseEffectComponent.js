@@ -2,8 +2,6 @@ import React,{
   useState,
   useEffect,
   useLayoutEffect,
-  useContext,
-  createContext,
 } from 'react';
 import Fieldset from '@Component/Fieldset';
 import axios from 'axios';
@@ -28,7 +26,7 @@ function A(){
 };
 
 function B(){
-  const [show,setShow] = useState(true);
+  const [show,setShow] = useState(false);
   
   function Child(){
     useEffect(()=>{
