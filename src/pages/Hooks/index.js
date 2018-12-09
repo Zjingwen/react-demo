@@ -6,19 +6,21 @@ import UseContentComponent from './UseContextComponent';
 import UseReducerComponent from './UseReducerComponent';
 import TodosComponent from './TodosComponent';
 import UseCallbackComponent from './UseCallbackComponent';
-import UseMemoComponent from './useMemoComponent';
+import UseMemoComponent from './UseMemoComponent';
+import UseRefComponent from './UseRefComponet';
 
 function Hooks(){
   return(
     <React.Fragment>
       <h1>Hooks</h1>
+      <TodosComponent />
       <UseStateComponent />
       <UseEffectComponent />
-      <TodosComponent />
       <UseContentComponent />
       <UseReducerComponent />
       <UseCallbackComponent />
       <UseMemoComponent />
+      <UseRefComponent />
     </React.Fragment>
   );
 };

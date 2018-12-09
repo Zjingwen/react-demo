@@ -37,7 +37,7 @@ function useMemoComponent(){
   },[]);
 
   return (
-    <Fieldset title='useMemoComponent'>
+    <Fieldset title='useMemo'>
       <MemoizedLet num={num} />
       <MemoizedConst num={num}/>
     </Fieldset>
