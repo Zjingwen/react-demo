@@ -6,6 +6,7 @@ import UseContentComponent from './UseContextComponent';
 import UseReducerComponent from './UseReducerComponent';
 import TodosComponent from './TodosComponent';
 import UseCallbackComponent from './UseCallbackComponent';
+import UseMemoComponent from './useMemoComponent';
 
 function Hooks(){
   return(
@@ -17,6 +18,7 @@ function Hooks(){
       <UseContentComponent />
       <UseReducerComponent />
       <UseCallbackComponent />
+      <UseMemoComponent />
     </React.Fragment>
   );
 };

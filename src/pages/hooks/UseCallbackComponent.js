@@ -48,9 +48,10 @@ function InputComponentCallback(){
 };
 
 function MemoizedConst ({num}){
-  const memoizedCallback = useCallback(()=>{
+  function doSomething(){
     return num;
-  },[]);
+  };
+  const memoizedCallback = useCallback(()=> doSomething(),[]);
 
   return (
     <Fieldset title='MemoizedConst'>
@@ -61,9 +62,10 @@ function MemoizedConst ({num}){
 };
 
 function MemoizedLet ({num}){
-  const memoizedCallback = useCallback(()=>{
+  function doSomething(){
     return num;
-  },[num]);
+  };
+  const memoizedCallback = useCallback(()=>doSomething(),[num]);
 
   return (
     <Fieldset title='MemoizedLet'>
