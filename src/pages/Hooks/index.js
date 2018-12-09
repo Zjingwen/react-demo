@@ -2,10 +2,10 @@ import React from 'react';
 
 import UseEffectComponent from './UseEffectComponent';
 import UseStateComponent from './UseStateComponent';
-import UseContentComponent from './useContextComponent';
-import UseReducerComponent from './useReducerComponent';
+import UseContentComponent from './UseContextComponent';
+import UseReducerComponent from './UseReducerComponent';
 import TodosComponent from './TodosComponent';
-
+import UseCallbackComponent from './UseCallbackComponent';
 
 function Hooks(){
   return(
@@ -16,6 +16,7 @@ function Hooks(){
       <TodosComponent />
       <UseContentComponent />
       <UseReducerComponent />
+      <UseCallbackComponent />
     </React.Fragment>
   );
 };
