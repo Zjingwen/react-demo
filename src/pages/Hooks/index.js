@@ -8,6 +8,8 @@ import TodosComponent from './TodosComponent';
 import UseCallbackComponent from './UseCallbackComponent';
 import UseMemoComponent from './UseMemoComponent';
 import UseRefComponent from './UseRefComponet';
+import UseImperativeMethodsComponent from './UseImperativeMethodsComponent';
+import UseMutationEffectComponent from './useMutationEffectComponent'; 
 
 function Hooks(){
   return(
@@ -21,6 +23,8 @@ function Hooks(){
       <UseCallbackComponent />
       <UseMemoComponent />
       <UseRefComponent />
+      <UseImperativeMethodsComponent />
+      <UseMutationEffectComponent />
     </React.Fragment>
   );
 };
