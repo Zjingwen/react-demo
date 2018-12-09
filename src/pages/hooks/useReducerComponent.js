@@ -18,7 +18,7 @@ function reducer(state,action){
 };
 
 function useReduceComponent(){
-  const [state,dispatch] = useReducer(reducer,0);
+  const [state,dispatch] = useReducer(reducer,0,'reset');
 
   return (
     <Fieldset title='useReduce'>
