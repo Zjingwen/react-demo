@@ -4,8 +4,7 @@
   "description": "Readt-demo",
   "main": "src/index.js",
   "scripts": {
-    "watch": "webpack -w",
-    "server": "webpack-dev-server"
+    "dev:watch": "webpack-dev-server"
   },
   "repository": {
     "type": "git",
