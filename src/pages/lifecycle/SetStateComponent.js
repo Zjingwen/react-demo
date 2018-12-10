@@ -32,6 +32,7 @@ class SetStateComponent extends React.Component{
   }
 
   render(){
+    console.log('render');
     return (
       <Fieldset title='设置属性'>
         <input type='button' value='更新时间' onClick={()=>this.handleClick()} />

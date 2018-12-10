@@ -2,6 +2,7 @@ import React from 'react';
 import MountingComponent from './MountingComponent';
 import NewpropsComponent from './NewpropsComponent';
 import SetStateComponent from './SetStateComponent';
+import ForceUpdateComponent from './ForceUpdateComponent';
 
 function lifecycle(){
   return(
@@ -10,6 +11,7 @@ function lifecycle(){
       <MountingComponent />
       <NewpropsComponent />
       <SetStateComponent />
+      <ForceUpdateComponent />
     </div>
   )
 };
