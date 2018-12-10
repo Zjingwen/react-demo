@@ -4,7 +4,7 @@ class About extends Component{
   render(){
     return(
       <div>
-        <h1>hello About</h1>
+        <h1>lifecycle 生命周期</h1>
       </div>
     )
   }
