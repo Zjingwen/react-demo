@@ -1,12 +1,14 @@
-import React,{Component} from 'react';
+import React from 'react';
+import MountingComponent from './MountingComponent';
+import NewpropsComponent from './NewpropsComponent';
 
-class About extends Component{
-  render(){
-    return(
-      <div>
-        <h1>lifecycle 生命周期</h1>
-      </div>
-    )
-  }
-} 
-export default About;
+function lifecycle(){
+  return(
+    <div>
+      <h1>生命周期</h1>
+      <MountingComponent />
+      <NewpropsComponent />
+    </div>
+  )
+};
+export default lifecycle;
