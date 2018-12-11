@@ -3,6 +3,7 @@ import MountingComponent from './MountingComponent';
 import NewpropsComponent from './NewpropsComponent';
 import SetStateComponent from './SetStateComponent';
 import ForceUpdateComponent from './ForceUpdateComponent';
+import GetDerivedStateFromPropsComponent from './getDerivedStateFromPropsComponent';
 
 function lifecycle(){
   return(
@@ -12,6 +13,7 @@ function lifecycle(){
       <NewpropsComponent />
       <SetStateComponent />
       <ForceUpdateComponent />
+      <GetDerivedStateFromPropsComponent />
     </div>
   )
 };
