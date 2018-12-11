@@ -5,9 +5,10 @@ import SetStateComponent from './SetStateComponent';
 import ForceUpdateComponent from './ForceUpdateComponent';
 import GetDerivedStateFromPropsComponent from './getDerivedStateFromPropsComponent';
 import ShuldComponentUpdateComponent from './shouldComponentUpdateComponent';
+import GetShapshotBeforeUpdateComponent from './getShapshotBeforeUpdateComponent';
 
-function lifecycle(){
-  return(
+function lifecycle() {
+  return (
     <div>
       <h1>生命周期</h1>
       <MountingComponent />
@@ -16,7 +17,8 @@ function lifecycle(){
       <ForceUpdateComponent />
       <GetDerivedStateFromPropsComponent />
       <ShuldComponentUpdateComponent />
+      <GetShapshotBeforeUpdateComponent />
     </div>
-  )
+  );
 };
 export default lifecycle;

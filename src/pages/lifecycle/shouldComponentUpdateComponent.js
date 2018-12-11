@@ -4,9 +4,9 @@ import React,{
 } from 'react';
 import Fieldset from '@Component/Fieldset';
 
-class Time extends Component{
-  shouldComponentUpdate(nextPorps){
-    if(this.props.time !== nextPorps.time){
+class Time extends Component {
+  shouldComponentUpdate(nextPorps) {
+    if (this.props.time !== nextPorps.time) {
       console.group('shouldComponent-props');
       console.log(nextPorps);
       console.log(this.props);
@@ -15,25 +15,25 @@ class Time extends Component{
     }
     return false;
   };
-  
-  render(){
-    return(
-      <React.Fragment>
+
+  render() {
+    return (
+      <p>
         {this.props.time}
-      </React.Fragment>
-    )
+      </p>
+    );
   }
 };
 
 function ShuldComponentUpdateComponent() {
-  const [time,setTime] = useState(new Date().toString());
+  const [time, setTime] = useState(new Date().toString());
 
-  return(
+  return (
     <Fieldset title='shuldComponentUpdate'>
       <input type='button' value='new Props' onClick={()=>setTime(new Date().toString())} />
-      <Time time={time}/>
+      <Time time={time} />
     </Fieldset>
-  )
+  );
 };
 
 export default ShuldComponentUpdateComponent;

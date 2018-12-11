@@ -1,16 +1,16 @@
-let path = require('path');
-let apiMocker = require('mocker-api');
-let HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require('path');
+const apiMocker = require('mocker-api');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
   entry: {
-    vender: ['react','react-router-dom','react-dom','axios'], 
-    main: path.resolve(__dirname,'src/index.js'),
+    vender: ['react', 'react-router-dom', 'react-dom', 'axios'],
+    main: path.resolve(__dirname, 'src/index.js'),
   },
-  output:{
-    path: path.resolve(__dirname,'build'),
-    filename: '[name].js'
+  output: {
+    path: path.resolve(__dirname, 'build'),
+    filename: '[name].js',
   },
   devtool: 'inline-source-map',
   stats: {
@@ -18,39 +18,39 @@ module.exports = {
     modules: false,
     children: false,
   },
-  resolve:{
-    extensions: [".js", ".css"],
-    alias:{
-      '@Component': path.resolve(__dirname,'src/component/'),
-    }
+  resolve: {
+    extensions: ['.js', '.css'],
+    alias: {
+      '@Component': path.resolve(__dirname, 'src/component/'),
+    },
   },
-  module:{
-    rules:[
-      {test: /\.js?$/, use: 'babel-loader',},
-      {test: /\.css?$/, use: ['style-loader','css-loader'],},
+  module: {
+    rules: [
+      {test: /\.js?$/, use: 'babel-loader'},
+      {test: /\.css?$/, use: ['style-loader', 'css-loader']},
     ],
   },
-  devServer:{
+  devServer: {
     compress: true,
     port: 9000,
     overlay: {
       warnings: true,
-      errors: true
+      errors: true,
     },
     open: true,
     historyApiFallback: true,
     watchOptions: {
-      poll: true
+      poll: true,
     },
-    before(app){
-      apiMocker(app,path.resolve(__dirname,'src/mock/index.js'),{
+    before(app) {
+      apiMocker(app, path.resolve(__dirname, 'src/mock/index.js'), {
         proxy: {
-          '/api/*': 'http://localhost:9000/api/'
-        }
-      })
+          '/api/*': 'http://localhost:9000/api/',
+        },
+      });
     },
   },
-  plugins:[new HtmlWebpackPlugin({
+  plugins: [new HtmlWebpackPlugin({
     template: 'index.html',
-  })]
+  })],
 };

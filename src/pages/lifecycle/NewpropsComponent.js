@@ -1,58 +1,64 @@
-import React,{useState} from 'react';
+import React, {
+  Component,
+  useState,
+} from 'react';
 import Fieldset from '@Component/Fieldset';
 
-class Flow extends React.Component{
-  state = {};
+class Flow extends Component {
+  constructor() {
+    super();
+    this.state = {};
+  };
 
-  static getDerivedStateFromProps(){
+  static getDerivedStateFromProps() {
     console.group('触发传递新的props');
     console.log('getDevivedStateFromProps');
     return null;
   };
 
-  shouldComponentUpdate(){
+  shouldComponentUpdate() {
     console.log('shouldComponentUpdate');
     return true;
   };
 
-  getSnapshotBeforeUpdate(){
+  getSnapshotBeforeUpdate() {
     console.log('getSnapshotBeforeUpdate');
     return null;
   };
 
-  componentDidUpdate(){
+  componentDidUpdate() {
     console.log('componentDidUpdate');
     console.groupEnd();
   };
 
-  render(){
+  render() {
     console.log('render');
-    return(
+    return (
       <React.Fragment>
         <p>{this.props.title}</p>
         <p>
-          static getDevivedStateFromPorps <br/>
-          | <br/>
-          shouldComponentUpdate <br/>
-          | <br/>
-          getSnapshotBeforeUpdate <br/>
-          | <br/>
+          static getDevivedStateFromPorps <br />
+          | <br />
+          shouldComponentUpdate <br />
+          | <br />
+          getSnapshotBeforeUpdate <br />
+          | <br />
           componentDidUpdate
         </p>
       </React.Fragment>
-    )
+    );
   }
 };
 
-function NewpropsComponent(){
-  const [time,setTime] = useState(new Date().toString());
+function NewpropsComponent() {
+  const [time, setTime] = useState(new Date().toString());
 
   return (
     <Fieldset title='传递新的props'>
-      <input type='button' value='触发传递新的props' onClick={()=>setTime(new Date().toString())}/>
-      <Flow title={time}/>
+      <input type='button' value='触发传递新的props' onClick={()=>setTime(new Date().toString())} />
+      <Flow title={time} />
     </Fieldset>
-  )
+  );
 };
 
 export default NewpropsComponent;

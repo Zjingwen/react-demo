@@ -4,7 +4,7 @@
   "description": "Readt-demo",
   "main": "src/index.js",
   "scripts": {
-    "dev:watch": "webpack-dev-server"
+    "dev": "webpack-dev-server"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,9 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
     "css-loader": "^1.0.1",
+    "eslint": "^5.10.0",
+    "eslint-config-google": "^0.11.0",
+    "eslint-plugin-react": "^7.11.1",
     "html-webpack-plugin": "^3.2.0",
     "mocker-api": "^1.6.6",
     "mockjs": "^1.0.1-beta3",
