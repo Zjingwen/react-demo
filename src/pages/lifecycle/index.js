@@ -4,6 +4,7 @@ import NewpropsComponent from './NewpropsComponent';
 import SetStateComponent from './SetStateComponent';
 import ForceUpdateComponent from './ForceUpdateComponent';
 import GetDerivedStateFromPropsComponent from './getDerivedStateFromPropsComponent';
+import ShuldComponentUpdateComponent from './shouldComponentUpdateComponent';
 
 function lifecycle(){
   return(
@@ -14,6 +15,7 @@ function lifecycle(){
       <SetStateComponent />
       <ForceUpdateComponent />
       <GetDerivedStateFromPropsComponent />
+      <ShuldComponentUpdateComponent />
     </div>
   )
 };
