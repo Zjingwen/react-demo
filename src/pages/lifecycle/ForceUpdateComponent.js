@@ -5,6 +5,7 @@ class ForceUpdateComponent extends React.Component{
   state = {};
 
   static getDerivedStateFromProps(){
+    console.group('forecUpdate更新');
     console.log('getDerivedStateFromProps');
     return true;
   };
@@ -16,6 +17,7 @@ class ForceUpdateComponent extends React.Component{
 
   componentDidUpdate(){
     console.log('componentDidUpdate');
+    console.groupEnd();
   }
 
   render(){

@@ -7,6 +7,7 @@ class SetStateComponent extends React.Component{
   };
   
   static getDerivedStateFromProps(){
+    console.group('设置属性');
     console.log('getDerivedStateFromProps');
     return null;
   };
@@ -23,6 +24,7 @@ class SetStateComponent extends React.Component{
 
   componentDidUpdate(){
     console.log('componentDidUpdate');
+    console.groupEnd();
   };
 
   handleClick(){
