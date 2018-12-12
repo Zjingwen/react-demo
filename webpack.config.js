@@ -5,8 +5,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   mode: 'development',
   entry: {
-    vender: ['react', 'react-router-dom', 'react-dom', 'axios'],
-    main: path.resolve(__dirname, 'src/index.js'),
+    'vender': ['react', 'react-router-dom', 'axios'],
+    'vender-router': ['react-router-dom'],
+    'vender-dom': ['react-dom'],
+    'main': path.resolve(__dirname, 'src/index.js'),
   },
   output: {
     path: path.resolve(__dirname, 'build'),
