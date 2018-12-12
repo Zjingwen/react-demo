@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, {
   Component,
   useState,
@@ -24,6 +25,12 @@ class Count extends Component {
       </React.Fragment>
     );
   }
+};
+Count.defaultProps = {
+  count: 0,
+};
+Count.propTypes = {
+  count: PropTypes.number,
 };
 
 class Time extends Component {
