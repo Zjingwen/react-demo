@@ -7,6 +7,7 @@ import GetDerivedStateFromPropsComponent from './GetDerivedStateFromPropsCompone
 import ShuldComponentUpdateComponent from './ShouldComponentUpdateComponent';
 import GetShapshotBeforeUpdateComponent from './GetShapshotBeforeUpdateComponent';
 import ComponentDidMountComponent from './ComponentDidMountComponent';
+import ComponentWillUnmountComponent from './ComponentWillUnmountComponent';
 
 function lifecycle() {
   return (
@@ -20,6 +21,7 @@ function lifecycle() {
       <ShuldComponentUpdateComponent />
       <GetShapshotBeforeUpdateComponent />
       <ComponentDidMountComponent />
+      <ComponentWillUnmountComponent />
     </div>
   );
 };
