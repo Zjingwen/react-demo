@@ -3,9 +3,10 @@ import MountingComponent from './MountingComponent';
 import NewpropsComponent from './NewpropsComponent';
 import SetStateComponent from './SetStateComponent';
 import ForceUpdateComponent from './ForceUpdateComponent';
-import GetDerivedStateFromPropsComponent from './getDerivedStateFromPropsComponent';
-import ShuldComponentUpdateComponent from './shouldComponentUpdateComponent';
-import GetShapshotBeforeUpdateComponent from './getShapshotBeforeUpdateComponent';
+import GetDerivedStateFromPropsComponent from './GetDerivedStateFromPropsComponent';
+import ShuldComponentUpdateComponent from './ShouldComponentUpdateComponent';
+import GetShapshotBeforeUpdateComponent from './GetShapshotBeforeUpdateComponent';
+import ComponentDidMountComponent from './ComponentDidMountComponent';
 
 function lifecycle() {
   return (
@@ -18,6 +19,7 @@ function lifecycle() {
       <GetDerivedStateFromPropsComponent />
       <ShuldComponentUpdateComponent />
       <GetShapshotBeforeUpdateComponent />
+      <ComponentDidMountComponent />
     </div>
   );
 };

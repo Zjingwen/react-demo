@@ -1,4 +1,5 @@
-import React,{
+import propTypes from 'prop-types';
+import React, {
   Component,
   useState,
 } from 'react';
@@ -24,8 +25,14 @@ class Time extends Component {
     );
   }
 };
+Time.propTypes = {
+  time: propTypes.string,
+};
+Time.defaultProps = {
+  time: '',
+};
 
-function ShuldComponentUpdateComponent() {
+function ShouldComponentUpdateComponent() {
   const [time, setTime] = useState(new Date().toString());
 
   return (
@@ -36,4 +43,4 @@ function ShuldComponentUpdateComponent() {
   );
 };
 
-export default ShuldComponentUpdateComponent;
+export default ShouldComponentUpdateComponent;
