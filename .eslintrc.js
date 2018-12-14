@@ -82,5 +82,7 @@ module.exports = {
     "react/jsx-child-element-spacing": [0],
     "react/no-set-state": [0],
     "react/destructuring-assignment": [0],
+    'react/no-array-index-key': [0],
+    'function-paren-newline': [0],
   },
 };

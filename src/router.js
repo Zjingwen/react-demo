@@ -1,27 +1,27 @@
 import Lifecycle from './pages/lifecycle/';
-import Topics from './pages/topics/';
 import Hooks from './pages/hooks/';
 import Index from './pages/index/';
+import Memo from './pages/memo/';
 
 export default [
   {
-    name: 'Index',
+    name: 'index',
     path: '/',
-    component: Index
+    component: Index,
   },
   {
     name: 'hooks',
     path: '/hooks',
-    component: Hooks
+    component: Hooks,
   },
-  { 
-    name: 'topics',
-    path: '/topics',
-    component: Topics
+  {
+    name: 'memo',
+    path: '/memo',
+    component: Memo,
   },
-  { 
+  {
     name: 'lifecycle',
     path: '/lifecycle',
-    component: Lifecycle
+    component: Lifecycle,
   },
 ];
