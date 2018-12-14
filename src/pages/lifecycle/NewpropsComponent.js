@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import React, {
   Component,
   useState,
@@ -48,6 +49,9 @@ class Flow extends Component {
       </React.Fragment>
     );
   }
+};
+Flow.propTypes = {
+  title: PropTypes.string.isRequired,
 };
 
 function NewpropsComponent() {
