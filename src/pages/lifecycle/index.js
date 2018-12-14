@@ -8,6 +8,7 @@ import ShuldComponentUpdateComponent from './ShouldComponentUpdateComponent';
 import GetShapshotBeforeUpdateComponent from './GetShapshotBeforeUpdateComponent';
 import ComponentDidMountComponent from './ComponentDidMountComponent';
 import ComponentWillUnmountComponent from './ComponentWillUnmountComponent';
+import ComponentDidCatchComponent from './ComponentDidCatchComponent';
 
 function lifecycle() {
   return (
@@ -22,6 +23,7 @@ function lifecycle() {
       <GetShapshotBeforeUpdateComponent />
       <ComponentDidMountComponent />
       <ComponentWillUnmountComponent />
+      <ComponentDidCatchComponent />
     </div>
   );
 };
