@@ -84,5 +84,6 @@ module.exports = {
     "react/destructuring-assignment": [0],
     'react/no-array-index-key': [0],
     'function-paren-newline': [0],
+    'react/sort-prop-types': [0],
   },
 };
