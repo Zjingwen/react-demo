@@ -2,6 +2,7 @@ import Lifecycle from './pages/lifecycle/';
 import Hooks from './pages/hooks/';
 import Index from './pages/index/';
 import Memo from './pages/memo/';
+import IsValidElement from './pages/isValidElement';
 
 export default [
   {
@@ -23,5 +24,10 @@ export default [
     name: 'lifecycle',
     path: '/lifecycle',
     component: Lifecycle,
+  },
+  {
+    name: 'isValidElement',
+    path: '/isValidElement',
+    component: IsValidElement,
   },
 ];
