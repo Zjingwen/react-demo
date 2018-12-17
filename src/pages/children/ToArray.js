@@ -4,31 +4,32 @@ import React, {
 } from 'react';
 import Fieldset from '@Component/Fieldset';
 
-class Count extends Component {
+class ToArray extends Component {
   render() {
-    const count = React.Children.count(this.props.children, ()=> console.log(11111));
+    const arr = React.Children.toArray(this.props.children);
 
     return (
-      <Fieldset title='count'>
-        {count}
+      <Fieldset title='toArray'>
+        <p>isArray: {Array.isArray(arr).toString()}</p>
+        {arr}
       </Fieldset>
     );
   }
 };
-Count.propTypes = {
+ToArray.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
 function Index() {
   return (
-    <Count>
+    <ToArray>
       <p>A</p>
       <p>B</p>
       <p>C</p>
       <p>D</p>
       <p>E</p>
       <p>F</p>
-    </Count>
+    </ToArray>
   );
 };
 

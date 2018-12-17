@@ -1,19 +1,22 @@
 import React, {
   Component,
 } from 'react';
-import Fieldset from '@Component/Fieldset';
 import Map from './Map';
 import ForEach from './ForEach';
 import Count from './Count';
+import Only from './Only';
+import ToArray from './ToArray';
 
 class ChildrenComponent extends Component {
   render() {
     return (
-      <Fieldset title='React.Children'>
+      <React.Fragment>
         <Map />
         <ForEach />
         <Count />
-      </Fieldset>
+        <Only />
+        <ToArray />
+      </React.Fragment>
     );
   }
 };
