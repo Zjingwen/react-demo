@@ -4,6 +4,7 @@ import Index from './pages/index/';
 import Memo from './pages/memo/';
 import IsValidElement from './pages/isValidElement';
 import CreacteFactory from './pages/createFactory';
+import Children from './pages/children';
 
 export default [
   {
@@ -35,5 +36,10 @@ export default [
     name: 'creacteFactory',
     path: '/creacteFactory',
     component: CreacteFactory,
+  },
+  {
+    name: 'children',
+    path: '/children',
+    component: Children,
   },
 ];
