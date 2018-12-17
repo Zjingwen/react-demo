@@ -5,6 +5,7 @@ import Memo from './pages/memo/';
 import IsValidElement from './pages/isValidElement';
 import CreacteFactory from './pages/createFactory';
 import Children from './pages/children';
+import CreateRef from './pages/createRef';
 
 export default [
   {
@@ -41,5 +42,10 @@ export default [
     name: 'children',
     path: '/children',
     component: Children,
+  },
+  {
+    name: 'createRef',
+    path: '/createRef',
+    component: CreateRef,
   },
 ];

@@ -85,5 +85,6 @@ module.exports = {
     'react/no-array-index-key': [0],
     'function-paren-newline': [0],
     'react/sort-prop-types': [0],
+    'react/no-did-mount-set-state': [0],
   },
 };
