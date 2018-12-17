@@ -4,31 +4,31 @@ import React, {
 } from 'react';
 import Fieldset from '@Component/Fieldset';
 
-class ForEact extends Component {
+class ForEach extends Component {
   render() {
     const arr = [];
     React.Children.forEach(this.props.children, (v) => arr.push(v));
     return (
-      <Fieldset title='ForEact'>
+      <Fieldset title='ForEach'>
         {arr}
       </Fieldset>
     );
   }
 };
-ForEact.propTypes = {
+ForEach.propTypes = {
   children: PropTypes.node.isRequired,
 };
 
 function Index() {
   return (
-    <ForEact>
+    <ForEach>
       <p>A</p>
       <p>B</p>
       <p>C</p>
       <p>D</p>
       <p>E</p>
       <p>F</p>
-    </ForEact>
+    </ForEach>
   );
 };
 
