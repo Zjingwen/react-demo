@@ -3,6 +3,7 @@ import Hooks from './pages/hooks/';
 import Index from './pages/index/';
 import Memo from './pages/memo/';
 import IsValidElement from './pages/isValidElement';
+import CreacteFactory from './pages/createFactory';
 
 export default [
   {
@@ -29,5 +30,10 @@ export default [
     name: 'isValidElement',
     path: '/isValidElement',
     component: IsValidElement,
+  },
+  {
+    name: 'creacteFactory',
+    path: '/creacteFactory',
+    component: CreacteFactory,
   },
 ];

@@ -11,8 +11,8 @@ import UseRefComponent from './UseRefComponet';
 import UseImperativeMethodsComponent from './UseImperativeMethodsComponent';
 import UseMutationEffectComponent from './useMutationEffectComponent'; 
 
-function Hooks(){
-  return(
+function Hooks() {
+  return (
     <React.Fragment>
       <h1>Hooks</h1>
       <TodosComponent />
