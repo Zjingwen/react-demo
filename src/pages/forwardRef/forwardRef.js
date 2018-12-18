@@ -33,7 +33,7 @@ class ForwardRefComponent extends Component {
   render() {
     const {refs} = this.state;
     const FancyInput = React.forwardRef((props, ref)=>{
-      return <Input forwardRef={ref} />;
+      return <Input {...props} forwardRef={ref} />;
     });
 
     return (
