@@ -7,6 +7,7 @@ import CreacteFactory from './pages/createFactory';
 import Children from './pages/children';
 import CreateRef from './pages/createRef';
 import ForwardRef from './pages/forwardRef';
+import Lazy from './pages/lazy';
 
 export default [
   {
@@ -53,5 +54,10 @@ export default [
     name: 'forwardRef',
     path: '/forwardRef',
     component: ForwardRef,
+  },
+  {
+    name: 'lazy',
+    path: '/lazy',
+    component: Lazy,
   },
 ];
