@@ -1,27 +1,38 @@
-import React, {
-  Component,
-} from 'react';
+import React from 'react';
 import Fieldset from '@Component/Fieldset';
 
-function wrapped(Com) {
-  class H extends Component {
+function wrapped(Component) {
+  class Wrapped extends React.Component {
     render() {
-      const {forwardRef, ...rest} = this.props;
-      return <Com ref={forwardRef} {...rest} />;
+      const {forwardedRef, ...props} = this.props;
+      return <Component ref={forwardedRef} {...props} />;
     }
+  }
+  return React.forwardRef((props, ref) => {
+    return <Wrapped {...props} forwardedRef={ref} />;
+  });
+}
+
+class Input extends React.Component {
+  constructor(props) {
+    super(props);
+    this.ref = React.createRef();
   };
 
-  return React.forwardRef((props, ref)=>{
-    return <H {...props} forwardRef={ref} />;
-  });
-};
+  handleFocus() {
+    const {current} = this.ref;
+    current.focus();
+  }
 
-function Input() {
-  return (
-    <input type='input' defaultValue='输入框' />
-  );
+  render() {
+    const props = this.props;
+    return (
+      <input type='input' defaultValue={props.value} ref={this.ref} />
+    );
+  }
 }
-class Hoc extends Component {
+
+class Hoc extends React.Component {
   constructor() {
     super();
     this.state = {
@@ -29,17 +40,19 @@ class Hoc extends Component {
     };
   };
 
-  componentDidMount() {
-    console.log(this.state.refs);
+  handleFocus() {
+    const {refs: {current}} = this.state;
+    current.handleFocus();
   }
 
   render() {
     const {refs} = this.state;
-    const WrappedInput = wrapped(Input);
+    const InputHoc = wrapped(Input);
+
     return (
       <Fieldset title='forwardRef-hoc-用法'>
-        forwardRef-hoc-用法
-        <WrappedInput forwardRef={refs} />
+        <InputHoc value='forwardRef-hoc-用法' ref={refs} />
+        <input type='button' value='获取焦点' onClick={()=>this.handleFocus()} />
       </Fieldset>
     );
   }
