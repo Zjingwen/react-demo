@@ -13,11 +13,12 @@ module.exports = {
     "google",
     "plugin:react/all",
   ],
+  "parser": "babel-eslint",
   "parserOptions": {
     "sourceType": "module",
     "ecmaVersion": 7,
     "ecmaFeatures": {
-      "experimentalObjectRestSpread": true,
+      "allowImportExportEverywhere": true,
       //允许在全局作用域下使用return语句
       "globalReturn": false,
       //启用全局strict模式（严格模式）
