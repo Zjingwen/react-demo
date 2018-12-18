@@ -86,5 +86,6 @@ module.exports = {
     'function-paren-newline': [0],
     'react/sort-prop-types': [0],
     'react/no-did-mount-set-state': [0],
+    'react/forbid-prop-types': [0],
   },
 };

@@ -6,6 +6,7 @@ import IsValidElement from './pages/isValidElement';
 import CreacteFactory from './pages/createFactory';
 import Children from './pages/children';
 import CreateRef from './pages/createRef';
+import ForwardRef from './pages/forwardRef';
 
 export default [
   {
@@ -47,5 +48,10 @@ export default [
     name: 'createRef',
     path: '/createRef',
     component: CreateRef,
+  },
+  {
+    name: 'forwardRef',
+    path: '/forwardRef',
+    component: ForwardRef,
   },
 ];
