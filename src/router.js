@@ -8,6 +8,8 @@ import Children from './pages/children';
 import CreateRef from './pages/createRef';
 import ForwardRef from './pages/forwardRef';
 import Lazy from './pages/lazy';
+import StrictMode from './pages/strictMode';
+import Context from './pages/context';
 
 export default [
   {
@@ -59,5 +61,15 @@ export default [
     name: 'lazy',
     path: '/lazy',
     component: Lazy,
+  },
+  {
+    name: 'strictMode',
+    path: '/strictMode',
+    component: StrictMode,
+  },
+  {
+    name: 'context',
+    path: '/context',
+    component: Context,
   },
 ];
