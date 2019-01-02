@@ -2,6 +2,7 @@ import React, {
   Component,
 } from 'react';
 import Fieldset from '@Component/Fieldset';
+import App from './app';
 
 const ThemeContext = React.createContext('light');
 
@@ -30,6 +31,8 @@ class Index extends Component {
           <h1>Provider内</h1>
           <Toolbar />
         </ThemeContext.Provider>
+        <hr />
+        <App />
       </Fieldset>
     );
   }
