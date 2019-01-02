@@ -8,15 +8,15 @@ const ThemeContext = React.createContext('light');
 class ThemedButton extends React.Component {
   static contextType = ThemeContext;
   render() {
-    return <input defaultValue={this.context} type='input' />;
+    return <span>{this.context}</span>;
   }
 }
 
-function Toolbar(props) {
+function Toolbar() {
   return (
-    <div>
+    <React.Fragment>
       <ThemedButton />
-    </div>
+    </React.Fragment>
   );
 }
 
@@ -24,8 +24,10 @@ class Index extends Component {
   render() {
     return (
       <Fieldset title='context'>
+        <h1>Provider外</h1>
         <Toolbar />
         <ThemeContext.Provider value="dark">
+          <h1>Provider内</h1>
           <Toolbar />
         </ThemeContext.Provider>
       </Fieldset>
