@@ -43,18 +43,18 @@ function TodosComponent() {
 
   const p = list.map((v, i)=>(
     <p key={i}>
-      <input type='button' value='修改' onClick={(e)=>handleModify(e,i)}/>
+      <input type='button' value='修改' onClick={(e)=>handleModify(e, i)} />
       {i}.
       {(()=>{
         if (v.show) {
           return (
-            <InputComponent val={v.val} name='确定' callback={(e)=>handleEdit(e,i)}/>
+            <InputComponent val={v.val} name='确定' callback={(e)=>handleEdit(e, i)} />
           );
         } else {
           return (
             <React.Fragment>
               {v.val}
-              <input type='button' value='删除' onClick={(e)=>handleRemove(e,i)}/>
+              <input type='button' value='删除' onClick={(e)=>handleRemove(e, i)} />
             </React.Fragment>
           );
         }
@@ -103,7 +103,7 @@ function TodosComponent() {
 
   return (
     <Fieldset title='todos'>
-      <InputComponent name='添加' placeholder='输入' callback={handleSubmit}/>
+      <InputComponent name='添加' placeholder='输入' callback={handleSubmit} />
       {p}
     </Fieldset>
   );
