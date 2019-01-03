@@ -10,6 +10,7 @@ import ForwardRef from './pages/forwardRef';
 import Lazy from './pages/lazy';
 import StrictMode from './pages/strictMode';
 import Context from './pages/context';
+import RenderProps from './pages/renderProps';
 
 export default [
   {
@@ -71,5 +72,10 @@ export default [
     name: 'context',
     path: '/context',
     component: Context,
+  },
+  {
+    name: 'renderProps',
+    path: '/renderProps',
+    component: RenderProps,
   },
 ];
